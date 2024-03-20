@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nepolin/dummy_transformations:latest
+    image: nepolin/sofa_score_data:latest
     command: bash
     volumes:
       - $PWD:/workdir
