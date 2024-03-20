@@ -2,7 +2,6 @@ import requests
 import pandas as pd
 
 class Sofascore:
-    
     ############################################################################
     def __init__(self):
         self.requests_headers = {
@@ -24,48 +23,6 @@ class Sofascore:
                 'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 '+ \
                 'Safari/537.36',
             }
-        
-        self.league_stats_fields = [
-            'goals', 'yellowCards', 'redCards', 'groundDuelsWon',
-            'groundDuelsWonPercentage', 'aerialDuelsWon', 
-            'aerialDuelsWonPercentage', 'successfulDribbles',
-            'successfulDribblesPercentage', 'tackles', 'assists',
-            'accuratePassesPercentage', 'totalDuelsWon', 
-            'totalDuelsWonPercentage', 'minutesPlayed', 'wasFouled', 'fouls',
-            'dispossessed', 'possesionLost', 'appearances', 'started', 'saves',
-            'cleanSheets', 'savedShotsFromInsideTheBox', 
-            'savedShotsFromOutsideTheBox', 'goalsConcededInsideTheBox',
-            'goalsConcededOutsideTheBox', 'highClaims', 'successfulRunsOut',
-            'punches', 'runsOut', 'accurateFinalThirdPasses', 
-            'bigChancesCreated', 'accuratePasses', 'keyPasses', 
-            'accurateCrosses', 'accurateCrossesPercentage', 'accurateLongBalls',
-            'accurateLongBallsPercentage', 'interceptions', 'clearances',
-            'dribbledPast', 'bigChancesMissed', 'totalShots', 'shotsOnTarget',
-            'blockedShots', 'goalConversionPercentage', 'hitWoodwork', 
-            'offsides', 'expectedGoals', 'errorLeadToGoal', 'errorLeadToShot',
-            'passToAssist'
-        ]
-        self.concatenated_fields = "%2C".join(self.league_stats_fields)
-    
-    ############################################################################
-    def get_positions(self, selected_positions):
-        """Returns a string for the parameter filters of the scrape_league_stats() request.
-
-        Args:
-            selected_positions (list): List of the positions available to filter on the SofaScore UI
-
-        Returns:
-            dict: Goalies, Defenders, Midfielders and Forwards and their translation for the parameter of the request
-        """
-        positions = {
-            'Goalkeepers': 'G',
-            'Defenders': 'D',
-            'Midfielders': 'M',
-            'Forwards': 'F'
-        }
-        abbreviations = [positions[position] for position in selected_positions]
-        return '~'.join(abbreviations)
-    
     ############################################################################
     def get_match_id(self, match_url):
         """Get match id from a Sofascore match url
@@ -78,7 +35,7 @@ class Sofascore:
         """
         # this can also be found in the 'id' key of the dict returned from 
         # get_match_data(), if the format of the match url ever changes
-        match_id = match_url.split('#')[-1]
+        match_id = match_url.split(':')[-1]
         return match_id
     
     ############################################################################
@@ -333,3 +290,8 @@ class Sofascore:
         heatmap = pd.DataFrame(response.json()['heatmap'])
         
         return heatmap
+    
+    def get_match_shotmap(self, match_url):
+        match_id = self.get_match_id(match_url)
+        response = requests.get('https://api.sofascore.com/api/v1/event/11911091/shotmap', headers=self.requests_headers)
+        return response

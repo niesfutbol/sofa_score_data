@@ -1,4 +1,5 @@
-"""A template Python module"""
+"""A module to scrap data from Sofascore"""
 
-__version__ = "0.4.0"
-from .transformations import add_offset  # noqa
+__version__ = "0.0.1"
+from .transformations import *  # noqa
+from .Scraper_Sofascore import *  # noqa
