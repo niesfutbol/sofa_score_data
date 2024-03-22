@@ -10,6 +10,7 @@ description-file = "README.md"
 home-page = "https://github.com/niesfutbol/sofa_score_data"
 module = "sofa_score_data"
 requires = [
+	"beautifulsoup4",
 	"pandas",
 	"requests",
 ]
