@@ -305,6 +305,6 @@ class Sofascore:
     def get_match_shotmap(self, match_url):
         match_id = self.get_match_id(match_url)
         response = requests.get(
-            "https://api.sofascore.com/api/v1/event/11911091/shotmap", headers=self.requests_headers
+            f"https://api.sofascore.com/api/v1/event/{match_id}/shotmap", headers=self.requests_headers
         )
         return response
