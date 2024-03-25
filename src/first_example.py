@@ -2,7 +2,7 @@ import requests
 import sofa_score_data as ssd
 
 
-match_url = "https://www.sofascore.com/fulham-tottenham-hotspur/IsT#id:11352604"
+match_url = "https://www.sofascore.com/fc-juarez-club-puebla/QNszHFb#id:12154131"
 
 sofa = ssd.Sofascore()
 
