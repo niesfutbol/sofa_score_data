@@ -1,0 +1,12 @@
+import json
+import sofa_score_data as ssd
+
+
+def load_data_from_match_details() -> dict:
+    f = open("/workdir/tests/data/match_details_fotmob.json")
+    return json.load(f)
+
+
+def test_get_attendance() -> None:
+    match_details: dict = load_data_from_match_details()
+    ssd.get_attendance()
