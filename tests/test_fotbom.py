@@ -12,3 +12,5 @@ def test_get_matches_url() -> None:
     league_info: dict = load_data_from_leagues()
     match_urls: list = ssd.get_matches_url(league_info)
     assert len(match_urls) == 164, "List len is right"
+    assert match_urls[0] == "/matches/queretaro-fc-vs-toluca/lto5f#4384303", "First url is right"
+    assert match_urls[1] == "/matches/atletico-de-san-luis-vs-mazatlan-fc/8tzh1yse#4384305", "Second url is right"
