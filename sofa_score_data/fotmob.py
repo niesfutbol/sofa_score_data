@@ -1,9 +1,9 @@
 def get_matches_url(league_info: dict) -> list:
-    return _get_matches_variable(league_info, variable = "pageUrl")
+    return _get_matches_variable(league_info, variable="pageUrl")
 
 
 def get_matches_id(league_info: dict) -> list:
-    return _get_matches_variable(league_info, variable = "id")
+    return _get_matches_variable(league_info, variable="id")
 
 
 def _get_matches_variable(league_info: dict, variable: str) -> list:
