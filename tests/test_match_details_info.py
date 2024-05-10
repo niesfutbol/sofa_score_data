@@ -9,4 +9,6 @@ def load_data_from_match_details() -> dict:
 
 def test_get_attendance() -> None:
     match_details: dict = load_data_from_match_details()
-    ssd.get_attendance(match_details)
+    obtained = ssd.get_attendance(match_details)
+    expected = 65644
+    assert obtained == expected, "Obtain the right attendance"
