@@ -14,7 +14,7 @@ all: check coverage mutants
 		tests
 
 module = sofa_score_data
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = 051af133-194c-429a-b2e8-e6805beb5745
 
 define lint
 	pylint \

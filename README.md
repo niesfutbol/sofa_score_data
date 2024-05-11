@@ -2,6 +2,7 @@
 src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align="right" width="256"
 /></a>
 
-# Template for Python projects
+# Sofascore and Fotmob scraper
+[![codecov](https://codecov.io/gh/niesfutbol/sofa_score_data/graph/badge.svg?token=vRIPoR2OZA)](https://codecov.io/gh/niesfutbol/sofa_score_data)
 
 ## Step to use
