@@ -16,4 +16,7 @@ def test_get_attendance() -> None:
 
 def test_get_top_players() -> None:
     match_details: dict = load_data_from_match_details()
-    ssd.get_top_players(match_details)
+    obatined = ssd.get_top_players(match_details)
+    expected = "Diego Valdés"
+    assert obatined["name"]["fullName"] == expected
+    
