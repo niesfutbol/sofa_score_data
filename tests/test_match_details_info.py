@@ -12,3 +12,8 @@ def test_get_attendance() -> None:
     obtained = ssd.get_attendance(match_details)
     expected = 65644
     assert obtained == expected, "Obtain the right attendance"
+
+
+def test_get_top_players() -> None:
+    match_details: dict = load_data_from_match_details()
+    ssd.get_top_players()
