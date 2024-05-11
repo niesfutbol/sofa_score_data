@@ -21,5 +21,5 @@ def write_team_name(value):
 
 team_name = [write_team_name(value) for value in list(momento.value)]
 momento["team_name"] = team_name
-output_name = f"momentum_{team_names[0].lower().replace(' ','-')}_vs_{team_names[1].lower().replace(' ','-')}.csv"
+output_name = f"momentum_{team_names[0].lower().replace(' ', '-')}_vs_{team_names[1].lower().replace(' ', '-')}.csv"
 momento.to_csv(output_name, index=False)
