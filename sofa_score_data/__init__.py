@@ -1,6 +1,6 @@
-"""A module to scrap data from Sofascore"""
+"""A module to scrap data from Sofascore and Fotmob"""
 
-__version__ = "0.0.1"
+__version__ = "0.1.0"
 from .transformations import *  # noqa
 from .Scraper_Sofascore import *  # noqa
 from .fotmob import *  # noqa
