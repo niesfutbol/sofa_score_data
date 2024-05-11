@@ -19,4 +19,3 @@ def test_get_top_players() -> None:
     obatined = ssd.get_top_players(match_details)
     expected = "Diego Valdés"
     assert obatined["name"]["fullName"] == expected
-    
