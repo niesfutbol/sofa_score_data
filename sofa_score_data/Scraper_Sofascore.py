@@ -107,61 +107,6 @@ class Sofascore:
 
         return home_team, away_team
 
-    ############################################################################
-    def scrape_league_stats(
-        self,
-        year,
-        league,
-        accumulation="total",
-        selected_positions=["Goalkeepers", "Defenders", "Midfielders", "Forwards"],
-    ):
-        """Get every player statistic that can be asked in league pages on
-        SofaScore.
-
-        Args:
-            tournament (string): Name of the competition
-            season (string): Season selected
-            accumulation (str, optional): Value of the filter accumulation. Can
-                be "per90", "perMatch", or "total". Defaults to 'total'.
-            selected_positions (list, optional): Value of the filter positions.
-                Defaults to ['Goalkeepers', 'Defenders', 'Midfielders',
-                'Forwards'].
-
-        Returns:
-            DataFrame: DataFrame with each row corresponding to a player and
-                the columns are the fields defined on get_league_stats_fields()
-        """
-        source_comp_info = get_source_comp_info(year, league, "Sofascore")
-
-        positions = self.get_positions(selected_positions)
-        league_id = source_comp_info["Sofascore"][league]["id"]
-        season_id = source_comp_info["Sofascore"][league]["seasons"][year]
-
-        offset = 0
-        df = pd.DataFrame()
-        for i in range(0, 100):
-            request_url = (
-                f"https://api.sofascore.com/api/v1"
-                + f"/unique-tournament/{league_id}/season/{season_id}/statistics"
-                + f"?limit=100&order=-rating&offset={offset}"
-                + f"&accumulation={accumulation}"
-                + f"&fields={self.concatenated_fields}"
-                + f"&filters=position.in.{positions}"
-            )
-            response = requests.get(request_url, headers=self.requests_headers)
-            new_df = pd.DataFrame(response.json()["results"])
-            new_df["player"] = new_df.player.apply(pd.Series)["name"]
-            new_df["team"] = new_df.team.apply(pd.Series)["name"]
-            df = pd.concat([df, new_df])
-
-            if response.json().get("page") == response.json().get("pages"):
-                print("End of the pages")
-                break
-            offset += 100
-
-        return df
-
-    ############################################################################
     def match_momentum(self, match_url):
         """Get the match momentum values
 

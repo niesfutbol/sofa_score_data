@@ -1,4 +1,3 @@
-import requests
 import sofa_score_data as ssd
 
 
