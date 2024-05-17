@@ -19,3 +19,10 @@ def test_get_top_players() -> None:
     obatined = ssd.get_top_players(match_details)
     expected = "Diego Valdés"
     assert obatined["name"]["fullName"] == expected
+
+def test_get_all_shots() -> None:
+    match_details: dict = load_data_from_match_details()
+    obatined = ssd.get_all_shots(match_details)
+    expected = "Carlos Orrantia"
+    assert obatined[0]["playerName"] == expected
+
