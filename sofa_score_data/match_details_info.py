@@ -4,3 +4,7 @@ def get_attendance(match_details) -> int:
 
 def get_top_players(match_details) -> dict:
     return match_details["content"]["matchFacts"]["topPlayers"]["homeTopPlayers"][0]
+
+
+def get_all_shots(match_details) -> dict:
+    return match_details["content"]["shotmap"]["shots"]
