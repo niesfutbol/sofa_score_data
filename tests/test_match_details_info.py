@@ -25,4 +25,7 @@ def test_get_all_shots() -> None:
     obatined = ssd.get_all_shots(match_details)
     expected = "Carlos Orrantia"
     assert obatined[0]["playerName"] == expected
+    expected = 0.3704860
+    assert obatined[1]["expectedGoals"] == expected
+    assert obatined[1]["expectedGoalsOnTarget"] == 0.709
 
