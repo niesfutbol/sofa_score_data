@@ -30,3 +30,9 @@ def test_get_all_shots() -> None:
     expected = 0.3704860
     assert obatined[1]["expectedGoals"] == pytest.approx(expected, 0.1)
     assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
+
+def test_get_momentum() -> None:
+    match_details: dict = load_data_from_match_details()
+    obatined = ssd.get_momentum(match_details)
+    expected = 38
+    assert obatined[1]["value"] == expected
