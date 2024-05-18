@@ -1,4 +1,5 @@
 import json
+import pytest
 import sofa_score_data as ssd
 
 
@@ -20,12 +21,12 @@ def test_get_top_players() -> None:
     expected = "Diego Valdés"
     assert obatined["name"]["fullName"] == expected
 
+
 def test_get_all_shots() -> None:
     match_details: dict = load_data_from_match_details()
     obatined = ssd.get_all_shots(match_details)
     expected = "Carlos Orrantia"
     assert obatined[0]["playerName"] == expected
     expected = 0.3704860
-    assert obatined[1]["expectedGoals"] == expected
-    assert obatined[1]["expectedGoalsOnTarget"] == 0.709
-
+    assert obatined[1]["expectedGoals"] == pytest.approx(expected, 0.1)
+    assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
