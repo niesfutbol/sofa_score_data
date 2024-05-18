@@ -8,3 +8,7 @@ def get_top_players(match_details) -> dict:
 
 def get_all_shots(match_details) -> dict:
     return match_details["content"]["shotmap"]["shots"]
+
+
+def get_momentum(match_details) -> list:
+    return match_details["content"]["matchFacts"]["momentum"]["main"]["data"]
