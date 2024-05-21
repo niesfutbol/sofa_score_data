@@ -40,7 +40,7 @@ def test_get_momentum() -> None:
 
 
 def test_get_percentage_momentun_by_team() -> None:
-    minutes = [1,2,-3,4,5,6,7,-2,4,-8,9]
+    minutes = [1, 2, -3, 4, 5, 6, 7, -2, 4, -8, 9]
     momentum = [_make_minute_momentum(minute) for minute in minutes]
     home_momentum = ssd.get_percentage_momentun_by_team(momentum)
     assert home_momentum == pytest.approx(74.5, 0.01)
