@@ -12,3 +12,9 @@ def get_all_shots(match_details) -> dict:
 
 def get_momentum(match_details) -> list:
     return match_details["content"]["matchFacts"]["momentum"]["main"]["data"]
+
+
+def get_percentage_momentun_by_team(momentum):
+    home = sum([minute["value"] for minute in momentum if minute["value"] > 0])
+    away = sum([minute["value"] for minute in momentum if minute["value"] < 0])
+    return (100*home/(home + abs(away)))
