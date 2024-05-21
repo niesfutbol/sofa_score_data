@@ -1,9 +1,9 @@
 def get_attendance(match_details) -> int:
-    return match_details["content"]["matchFacts"]["infoBox"]["Attendance"]
+    return _get_match_facts_from_details(match_details)["infoBox"]["Attendance"]
 
 
 def get_top_players(match_details) -> dict:
-    return match_details["content"]["matchFacts"]["topPlayers"]["homeTopPlayers"][0]
+    return _get_match_facts_from_details(match_details)["topPlayers"]["homeTopPlayers"][0]
 
 
 def get_all_shots(match_details) -> dict:
@@ -11,7 +11,11 @@ def get_all_shots(match_details) -> dict:
 
 
 def get_momentum(match_details) -> list:
-    return match_details["content"]["matchFacts"]["momentum"]["main"]["data"]
+    return _get_match_facts_from_details(match_details)["momentum"]["main"]["data"]
+
+
+def _get_match_facts_from_details(match_details) -> dict:
+    return match_details["content"]["matchFacts"]
 
 
 def get_percentage_momentun_by_team(momentum):
