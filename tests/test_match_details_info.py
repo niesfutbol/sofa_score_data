@@ -34,6 +34,17 @@ def test_get_all_shots() -> None:
 
 def test_get_momentum() -> None:
     match_details: dict = load_data_from_match_details()
-    obatined = ssd.get_momentum(match_details)
+    obtained = ssd.get_momentum(match_details)
     expected = 38
-    assert obatined[1]["value"] == expected
+    assert obtained[1]["value"] == expected
+
+
+def test_get_percentage_momentun_by_team() -> None:
+    minutes = [1,2,-3,4,5,6,7,-2,4,-8,9]
+    momentum = [_make_minute_momentum(minute) for minute in minutes]
+    home_momentum = ssd.get_percentage_momentun_by_team(momentum)
+    assert home_momentum == pytest.approx(74.5, 0.01)
+
+
+def _make_minute_momentum(minute) -> dict:
+    return {"value": minute}
