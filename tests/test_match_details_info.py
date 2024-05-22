@@ -25,10 +25,10 @@ def test_get_top_players() -> None:
 def test_get_all_shots() -> None:
     match_details: dict = load_data_from_match_details()
     obatined = ssd.get_all_shots(match_details)
-    expected = "Carlos Orrantia"
-    assert obatined[0]["playerName"] == expected
-    expected = 0.3704860
-    assert obatined[1]["expectedGoals"] == pytest.approx(expected, 0.1)
+    expected_name: str = "Carlos Orrantia"
+    assert obatined[0]["playerName"] == expected_name
+    expected_xG: float = 0.3704860
+    assert obatined[1]["expectedGoals"] == pytest.approx(expected_xG, 0.1)
     assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
 
 
