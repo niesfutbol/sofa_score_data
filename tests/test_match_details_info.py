@@ -28,8 +28,8 @@ def test_get_all_shots() -> None:
     expected_name: str = "Carlos Orrantia"
     shot: ssd.Shots = ssd.Shots(**obatined[0])
     assert shot.playerName == expected_name
-    expected_xG: float = 0.3704860
-    assert obatined[1]["expectedGoals"] == pytest.approx(expected_xG, 0.1)
+    expected_xG: float = 0.0358349
+    assert shot.expectedGoals == pytest.approx(expected_xG, 0.1)
     assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
 
 
