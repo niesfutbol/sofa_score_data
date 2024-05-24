@@ -26,7 +26,8 @@ def test_get_all_shots() -> None:
     match_details: dict = load_data_from_match_details()
     obatined = ssd.get_all_shots(match_details)
     expected_name: str = "Carlos Orrantia"
-    assert obatined[0]["playerName"] == expected_name
+    shot: ssd.Shots(obatined[0])
+    assert shot.player_name == expected_name
     expected_xG: float = 0.3704860
     assert obatined[1]["expectedGoals"] == pytest.approx(expected_xG, 0.1)
     assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
@@ -48,3 +49,8 @@ def test_get_percentage_momentun_by_team() -> None:
 
 def _make_minute_momentum(minute) -> dict:
     return {"value": minute}
+
+
+def test_shot_properties() -> dict:
+    match_details: dict = load_data_from_match_details()
+    obatined = ssd.get_all_shots(match_details)
