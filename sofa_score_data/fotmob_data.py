@@ -16,3 +16,8 @@ class Shots(BaseModel):
 class Matches(BaseModel):
     matchId: int
     matchName: str
+
+
+class Match_Momentum(BaseModel):
+    matchId: int
+    momentum_porc: float

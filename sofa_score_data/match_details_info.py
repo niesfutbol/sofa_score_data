@@ -1,4 +1,4 @@
-from sofa_score_data import Matches
+from sofa_score_data import Matches, Match_Momentum
 
 
 def get_attendance(match_details) -> int:
@@ -21,8 +21,11 @@ def _get_match_facts_from_details(match_details) -> dict:
     return match_details["content"]["matchFacts"]
 
 
-def get_match_percentage_momentun():
-    pass
+def get_match_percentage_momentun(match_details):
+    match_info: Matches = get_match_general_info(match_details)
+    momentum = get_momentum(match_details)
+    mom_per = get_percentage_momentun_by_team(momentum)
+    return Match_Momentum(**{**match_info.model_dump(), "momentum_porc": mom_per})
 
 
 def get_percentage_momentun_by_team(momentum):
