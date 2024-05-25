@@ -22,3 +22,7 @@ def get_percentage_momentun_by_team(momentum):
     home = sum([minute["value"] for minute in momentum if minute["value"] > 0])
     away = sum([minute["value"] for minute in momentum if minute["value"] < 0])
     return 100 * home / (home + abs(away))
+
+
+def get_match_general_info(match_details) -> list:
+    return match_details["general"]
