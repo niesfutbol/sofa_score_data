@@ -11,3 +11,7 @@ class Shots(BaseModel):
     x: float
     y: float
     min: int
+
+
+class Matches(BaseModel):
+    matchId: int
