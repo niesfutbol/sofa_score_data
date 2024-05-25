@@ -8,3 +8,5 @@ class Shots(BaseModel):
     eventType: str
     teamId: int
     playerId: int
+    x: float
+    y: float
