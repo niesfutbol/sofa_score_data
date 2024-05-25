@@ -15,3 +15,4 @@ class Shots(BaseModel):
 
 class Matches(BaseModel):
     matchId: int
+    matchName: str
