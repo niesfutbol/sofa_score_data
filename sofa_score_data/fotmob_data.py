@@ -10,3 +10,4 @@ class Shots(BaseModel):
     playerId: int
     x: float
     y: float
+    min: int
