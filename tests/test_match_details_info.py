@@ -60,4 +60,5 @@ def _make_minute_momentum(minute) -> dict:
 
 def test_get_match_general_info() -> None:
     match_details: dict = load_data_from_match_details()
-    _: ssd.Matches = ssd.get_match_general_info(match_details)
+    match_general_info: ssd.Matches = ssd.get_match_general_info(match_details)
+    assert match_general_info.matchId == 4384489
