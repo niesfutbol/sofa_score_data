@@ -5,3 +5,4 @@ class Shots(BaseModel):
     playerName: str
     expectedGoals: float
     expectedGoalsOnTarget: float
+    eventType: str
