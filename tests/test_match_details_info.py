@@ -56,3 +56,8 @@ def test_get_percentage_momentun_by_team() -> None:
 
 def _make_minute_momentum(minute) -> dict:
     return {"value": minute}
+
+
+def test_get_match_general_info() -> None:
+    match_details: dict = load_data_from_match_details()
+    _: ssd.Matches = ssd.get_match_general_info(match_details)
