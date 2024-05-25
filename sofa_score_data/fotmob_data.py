@@ -7,3 +7,4 @@ class Shots(BaseModel):
     expectedGoalsOnTarget: float
     eventType: str
     teamId: int
+    playerId: int
