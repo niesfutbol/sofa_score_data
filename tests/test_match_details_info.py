@@ -53,7 +53,7 @@ def test_get_percentage_momentun_by_team() -> None:
     assert home_momentum == pytest.approx(74.5, 0.01)
 
 
-def _an_example_of_momentum() -> list[dict]:
+def _an_example_of_momentum() -> "list[dict]":
     minutes = [1, 2, -3, 4, 5, 6, 7, -2, 4, -8, 9]
     return [_make_minute_momentum(minute) for minute in minutes]
 
