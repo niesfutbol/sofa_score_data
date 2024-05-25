@@ -2,7 +2,6 @@
 
 __version__ = "0.1.0"
 from .fotmob_data import *  # noqa
-from .transformations import *  # noqa
 from .Scraper_Sofascore import *  # noqa
 from .fotmob import *  # noqa
 from .match_details_info import *  # noqa
