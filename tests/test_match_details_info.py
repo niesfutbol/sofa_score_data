@@ -55,7 +55,7 @@ def test_get_percentage_momentun_by_team() -> None:
 
 def test_get_match_percentage_momentun() -> None:
     match_details: dict = load_data_from_match_details()
-    ssd.get_match_percentage_momentun()
+    match_momentum: ssd.Match_Momentum = ssd.get_match_percentage_momentun(match_details)
 
 
 def _an_example_of_momentum() -> "list[dict]":
