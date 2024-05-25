@@ -21,6 +21,10 @@ def _get_match_facts_from_details(match_details) -> dict:
     return match_details["content"]["matchFacts"]
 
 
+def get_match_percentage_momentun():
+    pass
+
+
 def get_percentage_momentun_by_team(momentum):
     home = sum([minute["value"] for minute in momentum if minute["value"] > 0])
     away = sum([minute["value"] for minute in momentum if minute["value"] < 0])
