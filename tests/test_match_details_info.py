@@ -56,6 +56,8 @@ def test_get_percentage_momentun_by_team() -> None:
 def test_get_match_percentage_momentun() -> None:
     match_details: dict = load_data_from_match_details()
     match_momentum: ssd.Match_Momentum = ssd.get_match_percentage_momentun(match_details)
+    assert match_momentum.matchId == 4384489
+    assert match_momentum.momentum_porc == pytest.approx(68.301, 0.01)
 
 
 def _an_example_of_momentum() -> "list[dict]":
