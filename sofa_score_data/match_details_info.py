@@ -27,5 +27,5 @@ def get_percentage_momentun_by_team(momentum):
     return 100 * home / (home + abs(away))
 
 
-def get_match_general_info(match_details) -> list:
+def get_match_general_info(match_details) -> Matches:
     return Matches(**match_details["general"])
