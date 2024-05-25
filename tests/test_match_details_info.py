@@ -30,7 +30,8 @@ def test_get_all_shots() -> None:
     assert shot.playerName == expected_name
     expected_xG: float = 0.0358349
     assert shot.expectedGoals == pytest.approx(expected_xG, 0.1)
-    assert obatined[1]["expectedGoalsOnTarget"] == pytest.approx(0.709, 0.1)
+    shot_1: ssd.Shots = ssd.Shots(**obatined[1])
+    assert shot_1.expectedGoalsOnTarget == pytest.approx(0.709, 0.1)
 
 
 def test_get_momentum() -> None:
