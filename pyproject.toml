@@ -12,6 +12,7 @@ module = "sofa_score_data"
 requires = [
 	"beautifulsoup4",
 	"pandas",
+	"pydantic",
 	"requests",
 ]
 requires-python=">=3.9"
