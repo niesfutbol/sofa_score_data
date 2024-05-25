@@ -32,6 +32,12 @@ def test_get_all_shots() -> None:
     assert shot.expectedGoals == pytest.approx(expected_xG, 0.1)
     shot_1: ssd.Shots = ssd.Shots(**obatined[1])
     assert shot_1.expectedGoalsOnTarget == pytest.approx(0.709, 0.1)
+    assert shot.eventType == "AttemptSaved"
+    assert shot.teamId == 6618
+    assert shot.playerId == 201110
+    assert shot.x == pytest.approx(87.96323529, 0.1)
+    assert shot.y == pytest.approx(18.043821658, 0.1)
+    assert shot.min == 5
 
 
 def test_get_momentum() -> None:
