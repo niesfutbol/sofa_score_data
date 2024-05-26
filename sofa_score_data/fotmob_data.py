@@ -25,3 +25,4 @@ class Match_Momentum(BaseModel):
 
 class Teams(BaseModel):
     name: str
+    id: int
