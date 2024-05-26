@@ -17,6 +17,7 @@ class Matches(BaseModel):
     matchId: int
     matchName: str
     home_id: int
+    home_name: str
 
 
 class Match_Momentum(BaseModel):
