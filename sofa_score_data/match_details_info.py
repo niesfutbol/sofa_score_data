@@ -39,4 +39,4 @@ def get_match_general_info(match_details) -> Matches:
 
 
 def get_match_team_info(match_details) -> Teams:
-    pass
+    return Teams(**match_details["header"]["teams"][0])
