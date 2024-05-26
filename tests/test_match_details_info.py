@@ -80,3 +80,4 @@ def test_get_match_general_info() -> None:
 
 def test_get_match_teams_info() -> None:
     team_general_info: ssd.Teams = ssd.get_match_team_info(match_details)
+    assert team_general_info.name == "CF America"
