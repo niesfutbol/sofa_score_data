@@ -79,7 +79,9 @@ def test_get_match_general_info() -> None:
 
 
 def test_get_match_teams_info() -> None:
-    team_general_info: ssd.Teams = ssd.get_match_team_info(match_details)
+    team_general_info: ssd.Teams = ssd.get_match_team_info(match_details, 0)
     assert team_general_info.name == "CF America"
     assert team_general_info.id == 6576
     assert team_general_info.score == 5
+    team_general_info: ssd.Teams = ssd.get_match_team_info(match_details, 1)
+    assert team_general_info.score == 1
