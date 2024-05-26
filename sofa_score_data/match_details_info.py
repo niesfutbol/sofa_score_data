@@ -38,5 +38,5 @@ def get_match_general_info(match_details) -> Matches:
     return Matches(**match_details["general"])
 
 
-def get_match_team_info(match_details) -> Teams:
-    return Teams(**match_details["header"]["teams"][0])
+def get_match_team_info(match_details, i_team) -> Teams:
+    return Teams(**match_details["header"]["teams"][i_team])
