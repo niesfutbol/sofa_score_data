@@ -1,4 +1,4 @@
-from sofa_score_data import Matches, Match_Momentum
+from sofa_score_data import Matches, Match_Momentum, Teams
 
 
 def get_attendance(match_details) -> int:
@@ -36,3 +36,7 @@ def get_percentage_momentun_by_team(momentum):
 
 def get_match_general_info(match_details) -> Matches:
     return Matches(**match_details["general"])
+
+
+def get_match_team_info(match_details) -> Teams:
+    pass

@@ -21,3 +21,7 @@ class Matches(BaseModel):
 class Match_Momentum(BaseModel):
     matchId: int
     momentum_porc: float
+
+
+class Teams(BaseModel):
+    ...
