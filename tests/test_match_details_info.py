@@ -77,6 +77,7 @@ def test_get_match_general_info() -> None:
     assert match_general_info.matchId == 4384489
     assert match_general_info.matchName == "CF America-vs-Toluca_Sun, Apr 14, 2024, 01:05 UTC"
     assert match_general_info.home_id == 6576
+    assert match_general_info.home_name == "CF America"
 
 
 def test_get_match_teams_info() -> None:
