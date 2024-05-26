@@ -8,6 +8,9 @@ def load_data_from_match_details() -> dict:
     return json.load(f)
 
 
+match_details: dict = load_data_from_match_details()
+
+
 def test_get_attendance() -> None:
     match_details: dict = load_data_from_match_details()
     obtained = ssd.get_attendance(match_details)
@@ -70,7 +73,10 @@ def test_get_match_percentage_momentun() -> None:
 
 
 def test_get_match_general_info() -> None:
-    match_details: dict = load_data_from_match_details()
     match_general_info: ssd.Matches = ssd.get_match_general_info(match_details)
     assert match_general_info.matchId == 4384489
     assert match_general_info.matchName == "CF America-vs-Toluca_Sun, Apr 14, 2024, 01:05 UTC"
+
+
+def test_get_match_teams_info() -> None:
+    team_general_info: ssd.Teams = ssd.get_match_team_info(match_details)
