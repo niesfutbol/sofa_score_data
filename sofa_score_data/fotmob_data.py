@@ -29,3 +29,6 @@ class Teams(BaseModel):
     name: str
     id: int
     score: int
+
+
+RESULTS: dict = {55: "results/serie_a"}
