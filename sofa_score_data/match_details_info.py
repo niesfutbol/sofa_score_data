@@ -35,10 +35,12 @@ def get_percentage_momentun_by_team(momentum):
 
 
 def get_match_general_info(match_details) -> Matches:
-    local: Teams = get_match_team_info(match_details, 0)
+    home: Teams = get_match_team_info(match_details, 0)
+    away: Teams = get_match_team_info(match_details, 1)
     general_info: dict = {
         **match_details["general"],
-        **{f"home_{item}": value for (item, value) in local.model_dump().items()},
+        **{f"home_{item}": value for (item, value) in home.model_dump().items()},
+        **{f"away_{item}": value for (item, value) in away.model_dump().items()},
     }
     return Matches(**general_info)
 

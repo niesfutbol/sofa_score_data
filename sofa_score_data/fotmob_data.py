@@ -18,6 +18,8 @@ class Matches(BaseModel):
     matchName: str
     home_id: int
     home_name: str
+    home_score: int
+    away_score: int
 
 
 class Match_Momentum(BaseModel):
