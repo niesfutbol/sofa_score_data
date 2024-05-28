@@ -79,6 +79,8 @@ def test_get_match_general_info() -> None:
     assert match_general_info.home_id == 6576
     assert match_general_info.home_name == "CF America"
     assert match_general_info.home_score == 5
+    assert match_general_info.away_id == 6618
+    assert match_general_info.away_name == "Toluca"
     assert match_general_info.away_score == 1
 
 
