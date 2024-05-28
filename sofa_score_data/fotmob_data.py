@@ -19,6 +19,8 @@ class Matches(BaseModel):
     home_id: int
     home_name: str
     home_score: int
+    away_id: int
+    away_name: str
     away_score: int
 
 
