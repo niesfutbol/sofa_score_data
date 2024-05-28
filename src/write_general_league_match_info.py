@@ -22,6 +22,6 @@ for match in last_five_matches:
     with open(input_path) as f:
         d = json.load(f)
     match_general_info: ssd.Matches = ssd.get_match_general_info(d)
-    b = {k: [v] for (k,v) in match_general_info.model_dump().items()}
+    b = {k: [v] for (k, v) in match_general_info.model_dump().items()}
     general_info = pd.concat([general_info, pd.DataFrame(b)])
-general_info.to_csv(f"/workdir/{result_path}/general_league_match.csv", index = False)
+general_info.to_csv(f"/workdir/{result_path}/general_league_match.csv", index=False)
