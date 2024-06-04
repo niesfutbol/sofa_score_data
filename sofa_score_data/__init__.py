@@ -6,3 +6,4 @@ from .Scraper_Sofascore import *  # noqa
 from .fotmob import *  # noqa
 from .match_details_info import *  # noqa
 from .fotmob_data import *  # noqa
+from .aux import *  # noqa
