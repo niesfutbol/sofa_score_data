@@ -7,6 +7,7 @@ def test_obtain_downloaded_files() -> None:
     obtained: list = ssd.obtain_downloaded_files(path)
     assert obtained == expected_id
 
+
 def test_obtain_not_downloaded_files() -> None:
     all_downloaded_files: list = [4230530, 4230531, 4230532]
     all_files: list = ["4230530", 4230531, "4230532", "4230533", 4230534]
