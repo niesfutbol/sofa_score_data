@@ -42,6 +42,7 @@ def test_get_all_shots() -> None:
     assert shot.y == pytest.approx(18.043821658, 0.1)
     assert shot.min == 5
     shot_2: ssd.Shots = ssd.Shots(**obatined[8])
+    shot_2.expectedGoalsOnTarget is None
 
 
 def test_get_momentum() -> None:
