@@ -1,10 +1,11 @@
+from typing import Optional
 from pydantic import BaseModel
 
 
 class Shots(BaseModel):
     playerName: str
     expectedGoals: float
-    expectedGoalsOnTarget: float
+    expectedGoalsOnTarget: Optional[float]
     eventType: str
     teamId: int
     playerId: int
