@@ -41,6 +41,7 @@ def test_get_all_shots() -> None:
     assert shot.x == pytest.approx(87.96323529, 0.1)
     assert shot.y == pytest.approx(18.043821658, 0.1)
     assert shot.min == 5
+    shot_2: ssd.Shots = ssd.Shots(**obatined[8])
 
 
 def test_get_momentum() -> None:
