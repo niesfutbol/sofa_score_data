@@ -24,11 +24,11 @@ def _get_match_facts_from_details(match_details) -> dict:
 def get_match_percentage_momentun(match_details) -> Match_Momentum:
     match_info: Matches = get_match_general_info(match_details)
     momentum = get_momentum(match_details)
-    mom_per = get_percentage_momentun_by_team(momentum)
+    mom_per = get_percentage_momentum_by_team(momentum)
     return Match_Momentum(**{**match_info.model_dump(), "momentum_porc": mom_per})
 
 
-def get_percentage_momentun_by_team(momentum):
+def get_percentage_momentum_by_team(momentum):
     home = sum([minute["value"] for minute in momentum if minute["value"] > 0])
     away = sum([minute["value"] for minute in momentum if minute["value"] < 0])
     return 100 * home / (home + abs(away))

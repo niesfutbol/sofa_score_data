@@ -52,9 +52,9 @@ def test_get_momentum() -> None:
     assert obtained[1]["value"] == expected
 
 
-def test_get_percentage_momentun_by_team() -> None:
+def test_get_percentage_momentum_by_team() -> None:
     momentum = _an_example_of_momentum()
-    home_momentum = ssd.get_percentage_momentun_by_team(momentum)
+    home_momentum = ssd.get_percentage_momentum_by_team(momentum)
     assert home_momentum == pytest.approx(74.5, 0.01)
 
 
