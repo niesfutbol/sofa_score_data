@@ -14,4 +14,4 @@ def obtain_not_downloaded_files(all_files, all_downloaded_files) -> list:
 
 
 def transfor_dict_of_scalar_to_list(scalar_dict: dict) -> dict:
-    pass
+    return {k: [v] for (k, v) in scalar_dict.items()}
