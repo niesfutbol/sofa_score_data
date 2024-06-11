@@ -20,10 +20,10 @@ for id_match in id_matches:
     with open(input_path) as f:
         d = json.load(f)
     momentum_tilt_home: ssd.Match_Momentum = ssd.get_match_percentage_momentun(d)
-    m = {k: [v] for (k, v) in momentum_tilt_home.model_dump().items()}
+    m = ssd.transfor_dict_of_scalar_to_list(momentum_tilt_home.model_dump())
     momentum_matches = pd.concat([momentum_matches, pd.DataFrame(m)])
     match_general_info: ssd.Matches = ssd.get_match_general_info(d)
-    b = {k: [v] for (k, v) in match_general_info.model_dump().items()}
+    b = ssd.transfor_dict_of_scalar_to_list(match_general_info.model_dump())
     general_info = pd.concat([general_info, pd.DataFrame(b)])
     shots = ssd.get_all_shots(d)
     s: "list[dict]" = [
