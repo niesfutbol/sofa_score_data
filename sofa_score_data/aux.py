@@ -11,3 +11,7 @@ def obtain_downloaded_files(path) -> list:
 
 def obtain_not_downloaded_files(all_files, all_downloaded_files) -> list:
     return [int(match) for match in all_files if int(match) not in all_downloaded_files]
+
+
+def transfor_dict_of_scalar_to_list(scalar_dict: dict) -> dict:
+    pass
