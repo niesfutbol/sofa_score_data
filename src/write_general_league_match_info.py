@@ -26,9 +26,13 @@ for id_match in id_matches:
     b = {k: [v] for (k, v) in match_general_info.model_dump().items()}
     general_info = pd.concat([general_info, pd.DataFrame(b)])
     shots = ssd.get_all_shots(d)
-    s: "list[dict]" = [{"matchId": id_match, **ssd.Shots(**shot).model_dump()} for shot in shots if not shot["isOwnGoal"]]
+    s: "list[dict]" = [
+        {"matchId": id_match, **ssd.Shots(**shot).model_dump()}
+        for shot in shots
+        if not shot["isOwnGoal"]
+    ]
     shots_players = pd.concat([shots_players, pd.DataFrame(s)])
-    
+
 general_info.to_csv(f"/workdir/{result_path}/general_league_match.csv", index=False)
 shots_players.to_csv(f"/workdir/{result_path}/shots_match.csv", index=False)
 momentum_matches.to_csv(f"/workdir/{result_path}/momentum_home_in_match.csv", index=False)
