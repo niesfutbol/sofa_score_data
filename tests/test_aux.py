@@ -14,3 +14,9 @@ def test_obtain_not_downloaded_files() -> None:
     expected: list = [4230533, 4230534]
     obtained: list = ssd.obtain_not_downloaded_files(all_files, all_downloaded_files)
     assert obtained == expected
+
+
+def test_transfor_dict_of_scalar_to_list() -> None:
+    scalar_dictionary: dict = {"a": 1, "b": True, "c": "abc"}
+    expected_dictionary: float = {"a": [1], "b": [True], "c": ["abc"]}
+    ssd.transfor_dict_of_scalar_to_list(scalar_dictionary)
