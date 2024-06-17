@@ -22,3 +22,9 @@ def test_get_matches_id() -> None:
     match_ids: list = ssd.get_matches_id(league_info)
     assert match_ids[0] == "4384303", "First id is right"
     assert match_ids[5] == "4384301", "Sixth id is right"
+
+
+def test_get_table() -> None:
+    league_info: dict = load_data_from_leagues()
+    table: "list[dict]" = ssd.get_league_table()
+    league_info["table"][0]["data"]["table"]["all"]
