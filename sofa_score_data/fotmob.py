@@ -13,3 +13,7 @@ def _get_matches_variable(league_info: dict, variable: str) -> list:
 
 def _get_all_matches_info(league_info) -> list:
     return [match for match in league_info["matches"]["allMatches"]]
+
+
+def get_league_table(league_info: dict) -> "list[dict]":
+    return league_info["table"][0]["data"]["table"]["all"]
