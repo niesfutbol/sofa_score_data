@@ -36,4 +36,8 @@ class Teams(BaseModel):
     score: int
 
 
+class Row_Table(BaseModel):
+    id: int
+
+
 RESULTS: dict = {55: "results/serie_a"}
