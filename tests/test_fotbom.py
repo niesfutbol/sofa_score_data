@@ -27,4 +27,5 @@ def test_get_matches_id() -> None:
 def test_get_table() -> None:
     f = open("/workdir/tests/data/league_serie_a_2023-24.json")
     league_info: dict = json.load(f)
-    table: "list[dict]" = ssd.get_league_table(league_info)
+    table: "list[ssd.Row_Table]" = ssd.get_league_table(league_info)
+    assert table[0].id == 8636
