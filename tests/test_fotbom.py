@@ -29,3 +29,4 @@ def test_get_table() -> None:
     league_info: dict = json.load(f)
     table: "list[ssd.Row_Table]" = ssd.get_league_table(league_info)
     assert table[0].id == 8636
+    assert table[0].pts == 86
