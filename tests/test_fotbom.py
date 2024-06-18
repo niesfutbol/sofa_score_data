@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 import sofa_score_data as ssd
 
 
@@ -31,3 +32,12 @@ def test_get_league_table() -> None:
     assert table[0].id == 8636
     assert table[0].pts == 94
     assert table[2].idx == 3
+
+
+def test_obtain_table_of_league() -> None:
+    f = open("/workdir/tests/data/league_serie_a_2023-24.json")
+    league_info: dict = json.load(f)
+    table: pd.DataFrame = ssd.obtain_table_of_league(league_info)
+    assert table.columns[0] == "id"
+    assert table.columns[1] == "pts"
+    assert table.columns[2] == "idx"
