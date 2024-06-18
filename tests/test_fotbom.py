@@ -30,3 +30,4 @@ def test_get_table() -> None:
     table: "list[ssd.Row_Table]" = ssd.get_league_table(league_info)
     assert table[0].id == 8636
     assert table[0].pts == 94
+    assert table[2].idx == 3
