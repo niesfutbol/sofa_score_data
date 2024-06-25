@@ -14,7 +14,7 @@ spread_5 <- momentum_distribution |>
 spread_5 |> ggplot(aes(x = iq, y = x)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, col="#00AFBB") +
-  ylab("Cuantil del 5%") + xlab("rango intercuartil") +
+  ylab("Cuantil del 5%") + xlab("Rango intercuartil") +
   theme_classic() +
   geom_text_repel(aes(label = spread_5$name), size = 3.5)
 ggsave("spread_distribution.png")
