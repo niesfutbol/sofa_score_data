@@ -4,7 +4,6 @@ import pandas as pd
 import sofa_score_data as ssd
 
 
-
 league_id: int = 55
 league_url: str = f"https://www.fotmob.com/api/leagues?id={league_id}&ccode3=MEX&season=2023%2F2024"
 r = requests.get(league_url)
