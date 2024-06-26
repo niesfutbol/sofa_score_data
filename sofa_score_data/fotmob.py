@@ -1,5 +1,4 @@
 import pandas as pd
-import sofa_score_data as ssd
 from sofa_score_data import Row_Table
 
 

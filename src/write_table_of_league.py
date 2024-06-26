@@ -1,4 +1,3 @@
-import json
 import requests
 import pandas as pd
 import sofa_score_data as ssd
