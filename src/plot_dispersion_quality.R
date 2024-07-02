@@ -8,10 +8,10 @@ id_teams <- read_csv("results/serie_a/id_teams.csv", show_col_types = FALSE) |>
 momentum_distribution <- read_csv("results/serie_a/momentum_distribution.csv", show_col_types = FALSE)
 spread_5 <- momentum_distribution |>
   group_by(team_id) |>
-  summarize(iq=IQR(momentum), x = quantile(momentum, 0.05)) |>
+  summarize(iqr=IQR(momentum), quality = quantile(momentum, 0.05)) |>
   left_join(id_teams, by=c("team_id"="id")) |>
   left_join(table, by=c("team_id"="id"))
-spread_5 |> ggplot(aes(x = iq, y = x)) +
+spread_5 |> ggplot(aes(x = iqr, y = quality)) +
   geom_point() +
   geom_smooth(method = "lm", se = FALSE, col="#00AFBB") +
   ylab("Cuantil del 5%") + xlab("Rango intercuartil") +
