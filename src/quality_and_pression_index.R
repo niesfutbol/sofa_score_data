@@ -7,3 +7,9 @@ full_model <- data |>
   lm(formula = pts ~ .)
 forward_model <- step(full_model, direction = "forward", scope = formula(~ .))
 backward_model <- step(full_model, direction = "backward")
+
+pca <- data |>
+  select(-c(team, team)) |>
+  prcomp(center = T, scale.=T)
+
+summary(pca)
