@@ -1,6 +1,6 @@
 import requests
 
-league_url: str = f"https://www.fotmob.com/api/fixtures?id=44&season=2024"
+league_url: str = "https://www.fotmob.com/api/fixtures?id=44&season=2024"
 r = requests.get(league_url)
 league_info = r.json()
 
