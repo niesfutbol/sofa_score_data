@@ -43,3 +43,9 @@ class Row_Table(BaseModel):
 
 
 RESULTS: dict = {55: "results/serie_a"}
+
+
+class Player(BaseModel):
+    id: str
+    name: str
+    birthDate: dict
