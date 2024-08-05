@@ -1,3 +1,6 @@
+import sofa_score_data as ssd
+
+
 squat: "list[dict]" = [
     {"title": "coach", "members": [{"id": 36053, "name": "Thomas Christiansen"}]},
     {
@@ -38,3 +41,8 @@ expected: "list[dict]" = [
     {"id": 526710, "name": "Edgar Barcenas"},
     {"id": 1054132, "name": "Eduardo Guerrero"},
 ]
+
+
+def test_obtain_players_from_squat() -> None:
+    obtained: "list[dict]" = ssd.obtain_players_from_squat()
+    assert expected == obtained
