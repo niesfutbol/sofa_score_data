@@ -49,3 +49,8 @@ class Player(BaseModel):
     id: str
     name: str
     birthDate: dict
+
+
+class Member(BaseModel):
+    id: int
+    name: str

@@ -8,3 +8,4 @@ from .match_details_info import *  # noqa
 from .fotmob_data import *  # noqa
 from .aux import *  # noqa
 from .player_info import *  # noqa
+from .team_info import *  # noqa
