@@ -12,4 +12,4 @@ def obtain_players_from_squat(squat: "list[dict]") -> "list[dict]":
 
 def obtain_player_info_from_member(member: dict) -> dict:
     m = Member(**member)
-    return m.dict()
+    return m.model_dump()

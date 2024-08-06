@@ -46,7 +46,7 @@ RESULTS: dict = {55: "results/serie_a"}
 
 
 class Player(BaseModel):
-    id: str
+    id: int
     name: str
     birthDate: dict
 
