@@ -1,4 +1,3 @@
-import pytest
 import sofa_score_data as ssd
 
 
