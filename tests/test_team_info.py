@@ -1,3 +1,4 @@
+import pytest
 import sofa_score_data as ssd
 
 
@@ -44,5 +45,11 @@ expected: "list[dict]" = [
 
 
 def test_obtain_players_from_squat() -> None:
-    obtained: "list[dict]" = ssd.obtain_players_from_squat()
+    obtained: "list[dict]" = ssd.obtain_players_from_squat(squat)
     assert expected == obtained
+
+
+def test_obtain_player_info_from_member() -> None:
+    obtained: dict = ssd.obtain_player_info_from_member(squat[0]["members"][0])
+    expected: dict = {"id": 36053, "name": "Thomas Christiansen"}
+    assert obtained == expected
