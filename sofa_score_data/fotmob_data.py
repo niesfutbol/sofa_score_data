@@ -42,7 +42,7 @@ class Row_Table(BaseModel):
     idx: int
 
 
-RESULTS: dict = {55: "results/serie_a"}
+RESULTS: dict = {55: "results/serie_a", 54: "results/bundesliga"}
 
 
 class Player(BaseModel):
