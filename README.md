@@ -19,9 +19,11 @@ src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align
 - Europa League = 73
 - LaLiga = 87
 - Liga MX = 230
-- [ ] Bélgica
-- [ ] Escocia
-- [ ] Austria
+- [ ] Bélgica = 40
+- [ ] Escocia = 64
+- [ ] Austria = 38
+- Copa América = 44
+- Eurocopa = 50
 
 
 ``` python
