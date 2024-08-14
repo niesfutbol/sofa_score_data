@@ -33,3 +33,5 @@ league = {"copa_america": 44, "eurocopa": 50, "bundesliga" = 54}
 ### Para la inclinación
 1. `python src/example_fotmob.py`
 1. `python src/write_general_league_match_info.py`
+1. `Rscript src/split_matches_table.R`
+1. `Rscript src/split_table.R`
