@@ -1,6 +1,8 @@
 library(tidyverse)
 
-shots <- read_csv("/workdir/results/serie_a/shots_match.csv", show_col_types = FALSE)
+league_name = "premierleague"
+input_file = glue::glue("/workdir/results/{league_name}/shots_match.csv")
+shots <- read_csv(input_file, show_col_types = FALSE)
 
 combination_key <- c("playerName", "teamId", "playerId")
 all_players <- shots |>
