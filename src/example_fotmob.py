@@ -2,8 +2,8 @@ import json
 import requests
 import sofa_score_data as ssd
 
-league_name: str = "bundesliga"
-league: dict = {"copa_america": 44, "eurocopa": 50, "bundesliga": 54}
+league_name: str = "premierleague"
+league: dict = {"copa_america": 44, "eurocopa": 50, "bundesliga": 54, "laliga": 87, "premierleague": 47}
 league_id: int = league[league_name]
 league_url: str = f"https://www.fotmob.com/api/leagues?id={league_id}&ccode3=MEX&season=2023%2F2024"
 r = requests.get(league_url)
