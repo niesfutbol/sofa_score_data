@@ -2,7 +2,8 @@ library(tidyverse)
 library(comprehenr)
 
 
-momentum_path <- "/workdir/results/serie_a/momentum_home_in_match.csv"
+league_name = "bundesliga"
+momentum_path <- glue::glue("/workdir/results/{league_name}/momentum_home_in_match.csv")
 momentum <- read_csv(momentum_path, show_col_types = FALSE)
 
 momentum_team <- momentum |>
@@ -10,8 +11,8 @@ momentum_team <- momentum |>
   mutate(momentum_away = 100 - momentum_home) |>
   pivot_longer(!matchId, names_to = "local", values_to = "momentum", names_prefix = "momentum_")
 
-id_teams <- read_csv("results/serie_a/id_teams.csv", show_col_types = FALSE)
-matches_id <- read_csv("results/serie_a/match_teams_id.csv", show_col_types = FALSE)
+id_teams <- read_csv(glue::glue("results/{league_name}/id_teams.csv"), show_col_types = FALSE)
+matches_id <- read_csv(glue::glue("results/{league_name}/match_teams_id.csv"), show_col_types = FALSE)
 full_momentum <- matches_id |>
   left_join(momentum_team, by = c("matchId", "local")) |>
   left_join(id_teams, by = c("team_id"="id"))
@@ -34,5 +35,6 @@ for (id_t in just_id_teams) {
     )
   print(id_t)
 }
+output_file <- glue::glue("results/{league_name}/momentum_distribution.csv")
 momentum_distribution |>
-  write_csv("results/serie_a/momentum_distribution.csv")
+  write_csv(output_file)
