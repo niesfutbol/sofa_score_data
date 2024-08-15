@@ -2,10 +2,12 @@ library(tidyverse)
 library(ggplot2)
 library(ggridges)
 
-table <- read_csv("results/serie_a/league_table.csv", show_col_types = FALSE)
-id_teams <- read_csv("results/serie_a/id_teams.csv", show_col_types = FALSE) |>
+league_name = "bundesliga"
+table <- read_csv(glue::glue("results/{league_name}/league_table.csv"), show_col_types = FALSE)
+id_teams <- read_csv(glue::glue("results/{league_name}/id_teams.csv"), show_col_types = FALSE) |>
   distinct(id, .keep_all=TRUE)
-momentum_distribution <- read_csv("results/serie_a/momentum_distribution.csv", show_col_types = FALSE)
+momentum_distribution_file <- glue::glue("results/{league_name}/momentum_distribution.csv")
+momentum_distribution <- read_csv(momentum_distribution_file, show_col_types = FALSE)
 momentum_distribution |>
   left_join(id_teams, by=c("team_id"="id")) |>
   left_join(table, by=c("team_id"="id")) |>
