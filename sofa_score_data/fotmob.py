@@ -28,3 +28,14 @@ def obtain_table_of_league(league_info: dict) -> pd.DataFrame:
     league_table: "list[Row_Table]" = get_league_table(league_info)
     t: "list[dict]" = [row.model_dump() for row in league_table]
     return pd.DataFrame(t)
+
+
+def get_league_table_mx(league_info: dict) -> "list[Row_Table]":
+    table_rows: "list[dict]" = league_info["table"][0]["data"]["tables"][0]["table"]["all"]
+    return [Row_Table(**row) for row in table_rows]
+
+
+def obtain_table_of_league_mx(league_info: dict) -> pd.DataFrame:
+    league_table: "list[Row_Table]" = get_league_table_mx(league_info)
+    t: "list[dict]" = [row.model_dump() for row in league_table]
+    return pd.DataFrame(t)
