@@ -30,12 +30,15 @@ def obtain_table_of_league(league_info: dict) -> pd.DataFrame:
     return pd.DataFrame(t)
 
 
-def get_league_table_mx(league_info: dict) -> "list[Row_Table]":
-    table_rows: "list[dict]" = league_info["table"][0]["data"]["tables"][0]["table"]["all"]
+def get_league_table_mx(league_info: dict, index: int) -> "list[Row_Table]":
+    table_rows: "list[dict]" = league_info["table"][0]["data"]["tables"][index]["table"]["all"]
     return [Row_Table(**row) for row in table_rows]
 
 
-def obtain_table_of_league_mx(league_info: dict) -> pd.DataFrame:
-    league_table: "list[Row_Table]" = get_league_table_mx(league_info)
+def obtain_table_of_league_mx(league_info: dict, clausura: bool) -> pd.DataFrame:
+    index = 1
+    if clausura:
+        index = 0
+    league_table: "list[Row_Table]" = get_league_table_mx(league_info, index)
     t: "list[dict]" = [row.model_dump() for row in league_table]
     return pd.DataFrame(t)
