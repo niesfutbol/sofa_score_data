@@ -46,7 +46,7 @@ def test_obtain_table_of_league() -> None:
 def test_obtain_table_of_league_mx() -> None:
     f = open("/workdir/tests/data/league_mx.json")
     league_info: dict = json.load(f)
-    table: pd.DataFrame = ssd.obtain_table_of_league_mx(league_info)
+    table: pd.DataFrame = ssd.obtain_table_of_league_mx(league_info, clausura = True)
     assert table.columns[0] == "id"
     assert table.columns[1] == "pts"
     assert table.columns[2] == "idx"
