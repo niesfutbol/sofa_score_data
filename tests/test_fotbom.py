@@ -46,8 +46,10 @@ def test_obtain_table_of_league() -> None:
 def test_obtain_table_of_league_mx() -> None:
     f = open("/workdir/tests/data/league_mx.json")
     league_info: dict = json.load(f)
-    table: pd.DataFrame = ssd.obtain_table_of_league_mx(league_info, clausura = True)
+    table: pd.DataFrame = ssd.obtain_table_of_league_mx(league_info, clausura=True)
     assert table.columns[0] == "id"
     assert table.columns[1] == "pts"
     assert table.columns[2] == "idx"
     assert table.pts[0:3].tolist() == [38, 33, 27]
+    table_apertura: pd.DataFrame = ssd.obtain_table_of_league_mx(league_info, clausura=False)
+    assert table_apertura.pts[0:3].tolist() == [35, 29, 29]
