@@ -50,3 +50,4 @@ def test_obtain_table_of_league_mx() -> None:
     assert table.columns[0] == "id"
     assert table.columns[1] == "pts"
     assert table.columns[2] == "idx"
+    assert table.pts[0:3].tolist() == [38, 33, 27]
