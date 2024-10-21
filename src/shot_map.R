@@ -82,15 +82,6 @@ hex_xy |>
   )
 
 
-players_of_interest <- c(
-  'Andre-Pierre Gignac',
-  'Juan Dinenno',
-  'Raymundo Fulgencio',
-  'Nicolás Ibánez',
-  'Harold Preciado',
-  'Leonardo Fernandez'
-)
-
 df_all_players <- read_csv("/workdir/results/serie_a/shots_match.csv", show_col_types = FALSE) |>
 #  filter(situation != 'Penalty', !isOwnGoal) |> 
   transmute(
@@ -203,8 +194,8 @@ base <- df |>
     panel.spacing.y = unit(2, 'lines') ## more spacing between facet rows
   ) +
   labs(
-    title = "LIGA MX'S TOP SHOOTERS",
-    subtitle = "Non-penalty shot bins for Liga MX's top 6 shooters | Apertura 2022/2023 | viz by @sonofacorner, inspired by @jonollington",
+    title = "Goleadores de la Serie A",
+    subtitle = "Top 6 de goleo | Serie A 2023/2024 | Tomado del código de @TonyElHabr",
     y = NULL,
     x = NULL
   ) +
