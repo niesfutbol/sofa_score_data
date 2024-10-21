@@ -8,7 +8,6 @@ library(grid)
 library(cowplot)
 library(magick)
 library(ggforce)
-library(patchwork)
 
 dir_proj <- '61-sonofacorner_shotmap'
 sandpaper_background_color <- '#EFE9E6'
@@ -92,8 +91,8 @@ players_of_interest <- c(
   'Leonardo Fernandez'
 )
 
-df_all_players <- read_csv("results/serie_a/shots_match.csv", show_col_types = FALSE) |> 
-  #filter(situation != 'Penalty', !isOwnGoal) |> 
+df_all_players <- read_csv("/workdir/results/serie_a/shots_match.csv", show_col_types = FALSE) |>
+#  filter(situation != 'Penalty', !isOwnGoal) |> 
   transmute(
     player_name = playerName,
     team_id = teamId,
@@ -101,14 +100,14 @@ df_all_players <- read_csv("results/serie_a/shots_match.csv", show_col_types = F
     xG = expectedGoals,
     goal = ifelse(eventType == 'Goal', 1L, 0L)
   )
-all_names <- df |>
+all_names <- df_all_players |>
   group_by(player_name) |>
-  summarize(goles = sum(goal)) |>
-  arrange(-goles) |>
+  summarize(goals = sum(goal)) |>
+  arrange(-goals) |>
   pull(player_name)
 
 players_of_interest <- all_names[1:6]
-df <- df_all_players |>
+df <- df_all_players |> 
   filter(
     player_name %in% players_of_interest
   ) |> 
