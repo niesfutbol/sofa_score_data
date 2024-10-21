@@ -8,3 +8,11 @@ services:
     command: bash
     volumes:
       - $PWD:/workdir
+  nies_sofa:
+    build:
+      context: .
+      dockerfile: Dockerfile_sofa
+    image: nepolin/sofa_score_data_plot:latest
+    command: bash
+    volumes:
+      - $PWD:/workdir
