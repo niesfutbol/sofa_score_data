@@ -43,10 +43,12 @@ class Row_Table(BaseModel):
 
 
 RESULTS: dict = {
+    42: "results/champions_league",
     55: "results/serie_a",
     54: "results/bundesliga",
     87: "results/laliga",
     47: "results/premierleague",
+    230: "results/ligaMX",
 }
 
 
