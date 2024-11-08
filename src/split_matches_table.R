@@ -1,6 +1,12 @@
 library(tidyverse)
 
-league_name = "premierleague"
+LEAGUE_FROM_ID <- list(
+  "42"="champions_league",
+  "54"="bundesliga",
+  "87"="laliga",
+  "47"="premierleague"
+)
+league_name = LEAGUE_FROM_ID[["42"]]
 fixtures_path <- glue::glue("/workdir/results/{league_name}/general_league_match.csv")
 matches <- read_csv(fixtures_path, show_col_types = FALSE)
 
