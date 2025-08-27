@@ -2,12 +2,13 @@ import json
 import requests
 import sofa_score_data as ssd
 
-league_name: str = "FIFA_club_world_cup"
+league_name: str = "serie_a"
 league: dict = {
     "champions_league": 42,
     "copa_america": 44,
     "eurocopa": 50,
     "bundesliga": 54,
+	"serie_a": 55,
     "laliga": 87,
     "premierleague": 47,
     "FIFA_club_world_cup": 78,
