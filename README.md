@@ -24,6 +24,7 @@ src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align
 - [ ] Austria = 38
 - Copa América = 44
 - Eurocopa = 50
+- FIFA Club World Cup = 78
 
 
 ``` python

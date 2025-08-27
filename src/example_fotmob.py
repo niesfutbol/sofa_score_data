@@ -2,7 +2,7 @@ import json
 import requests
 import sofa_score_data as ssd
 
-league_name: str = "champions_league"
+league_name: str = "FIFA_club_world_cup"
 league: dict = {
     "champions_league": 42,
     "copa_america": 44,
@@ -10,6 +10,7 @@ league: dict = {
     "bundesliga": 54,
     "laliga": 87,
     "premierleague": 47,
+	"FIFA_club_world_cup": 78,
 }
 header: dict = requests.get("http://46.101.91.154:6006/").json()
 league_id: int = league[league_name]
