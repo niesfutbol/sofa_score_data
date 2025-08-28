@@ -2,13 +2,13 @@ import json
 import requests
 import sofa_score_data as ssd
 
-league_name: str = "serie_a"
+league_name: str = "bundesliga"
 league: dict = {
     "champions_league": 42,
     "copa_america": 44,
     "eurocopa": 50,
     "bundesliga": 54,
-	"serie_a": 55,
+    "serie_a": 55,
     "laliga": 87,
     "premierleague": 47,
     "FIFA_club_world_cup": 78,
@@ -21,7 +21,7 @@ league_info = r.json()
 match_id: list = ssd.get_matches_id(league_info)
 last_five_matches = [
     requests.get(f"https://www.fotmob.com/api/matchDetails?matchId={id_m}", headers=header).json()
-    for id_m in match_id[:72]
+    for id_m in match_id
 ]
 xG = [shot["expectedGoals"] for shot in ssd.get_all_shots(last_five_matches[3])]
 result_path: str = ssd.RESULTS[league_id]

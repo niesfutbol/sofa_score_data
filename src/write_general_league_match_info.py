@@ -5,7 +5,7 @@ import sofa_score_data as ssd
 
 
 header: dict = requests.get("http://46.101.91.154:6006/").json()
-league_id: int = 42
+league_id: int = 54
 league_url: str = f"https://www.fotmob.com/api/leagues?id={league_id}&ccode3=MEX&season=2024%2F2025"
 r = requests.get(league_url, headers=header)
 league_info = r.json()
@@ -15,8 +15,8 @@ result_path: str = ssd.RESULTS[league_id]
 general_info: pd.DataFrame = pd.DataFrame()
 shots_players: pd.DataFrame = pd.DataFrame()
 momentum_matches: pd.DataFrame = pd.DataFrame()
-for id_match in id_matches[:72]:
-    print(id_match)
+for index, id_match in enumerate(id_matches):
+    print(f"id_match: {id_match} and index: {index}")
     input_path = f"/workdir/{result_path}/match_details_data_{id_match}.json"
     with open(input_path) as f:
         d = json.load(f)
