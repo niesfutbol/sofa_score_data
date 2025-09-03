@@ -21,3 +21,25 @@ def test_transfor_dict_of_scalar_to_list() -> None:
     expected_dictionary: dict = {"a": [1], "b": [True], "c": ["abc"]}
     obtained_dictionary: dict = ssd.transfor_dict_of_scalar_to_list(scalar_dictionary)
     assert obtained_dictionary == expected_dictionary
+
+
+def test_extract_id_from_filename() -> None:
+    filename: str = [
+        "match_details_data_4221977.json",
+        "match_details_data_4221992.json",
+        "match_details_data_4221918.json",
+        "match_details_data_4221758.json",
+    ]
+    expected_id: int = [4221977, 4221992, 4221918, 4221758]
+    obtained_id: int = ssd.extract_id_from_filename(filename)
+    assert obtained_id == expected_id
+    filename_with_error: str = [
+        "other_name.csv",
+        "match_details_data_4221977.json",
+        "match_details_data_4221992.json",
+        "match_details_data_4221918.json",
+        "match_details_data_4221758.json",
+    ]
+    expected_id: int = [4221977, 4221992, 4221918, 4221758]
+    obtained_id: int = ssd.extract_id_from_filename(filename_with_error)
+    assert obtained_id == expected_id
