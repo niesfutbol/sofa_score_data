@@ -51,6 +51,8 @@ RESULTS: dict = {
     47: "results/premierleague",
     230: "results/ligaMX",
     78: "results/fifa_club_world_cup",
+    53: "results/ligue_1",
+    57: "results/eredivisie",
 }
 
 
