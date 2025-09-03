@@ -18,4 +18,8 @@ def transfor_dict_of_scalar_to_list(scalar_dict: dict) -> dict:
 
 
 def extract_id_from_filename(filenames: str) -> int:
-    return [int(f.split("match_details_data_")[1].split(".")[0]) for f in filenames if "match_details_data_" in f]
+    return [
+        int(f.split("match_details_data_")[1].split(".")[0])
+        for f in filenames
+        if "match_details_data_" in f
+    ]
