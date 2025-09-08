@@ -2,9 +2,9 @@ import json
 import requests
 import sofa_score_data as ssd
 
-season: int = 2022
+season: int = 2021
 season_id: str = f"{season}%2F{season + 1}"
-league_name: str = "liga_mx"
+league_name: str = "primeira_liga"
 league: dict = {
     "champions_league": 42,
     "copa_america": 44,
@@ -17,10 +17,11 @@ league: dict = {
     "ligue_1": 53,
     "eredivisie": 57,
 	"liga_mx":230,
+	"primeira_liga": 61,
 }
 header: dict = requests.get("http://46.101.91.154:6006/").json()
 league_id: int = league[league_name]
-league_url: str = f"https://www.fotmob.com/api/leagues?id={league_id}&season={season_id}+-+Clausura"
+league_url: str = f"https://www.fotmob.com/api/leagues?id={league_id}&season={season_id}"
 r = requests.get(league_url, headers=header)
 league_info = r.json()
 match_id: list = ssd.get_matches_id(league_info)
