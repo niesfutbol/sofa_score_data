@@ -16,8 +16,8 @@ league: dict = {
     "FIFA_club_world_cup": 78,
     "ligue_1": 53,
     "eredivisie": 57,
-	"liga_mx":230,
-	"primeira_liga": 61,
+    "liga_mx": 230,
+    "primeira_liga": 61,
 }
 header: dict = requests.get("http://46.101.91.154:6006/").json()
 league_id: int = league[league_name]
