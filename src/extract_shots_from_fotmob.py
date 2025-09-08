@@ -1,10 +1,9 @@
 import os
 import json
-import requests
 import pandas as pd
 import sofa_score_data as ssd
 
-league_name: str = "bundesliga"
+league_name: str = "primeira_liga"
 league: dict = {
     "champions_league": 42,
     "copa_america": 44,
@@ -16,6 +15,7 @@ league: dict = {
     "FIFA_club_world_cup": 78,
     "ligue_1": 53,
     "eredivisie": 57,
+    "primeira_liga": 61,
 }
 league_id: int = league[league_name]
 
