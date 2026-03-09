@@ -7,6 +7,9 @@ src="https://github.com/nepito/world_cup_semis/blob/develop/img/logo.jpeg" align
 
 ## Step to use
 
+### Docker compose
+`sudo docker compose run --remove-orphans nies`
+
 ### `id` of different leagues
 
 - Champions League = 42
